@@ -18,15 +18,13 @@ def kmp(s: str, pattern: str) -> int:
     Find the first index of pattern in string s
     """
     nxt = build_next(pattern)
-    i, j = 0, 0
-    while i < len(s):
-        if s[i] == pattern[j]:
-            i += 1
-            j += 1
-        elif j > 0:
+    n, m = len(s), len(pattern)
+    j = 0
+    for i in range(n):
+        while j > 0 and s[i] != pattern[j]:
             j = nxt[j - 1]
-        else:
-            i += 1
-        if j == len(pattern):
-            return i - j
+        if s[i] == pattern[j]:
+            j += 1
+        if j == m:
+            return i - j + 1
     return -1
