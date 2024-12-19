@@ -8,4 +8,5 @@ Some DSA template to be used in Leetcode weekly contest in python.
 - [ ] Binary Indexed Tree
 - [ ] Union-Find
 - [ ] Modular Inverse
+- [ ] Manacher
 - ...
